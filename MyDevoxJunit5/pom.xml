@@ -1,7 +1,115 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.my</groupId>
-  <artifactId>MyDevoxJunit5</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.my</groupId>
+	<artifactId>MyDevoxJunit5</artifactId>
+		<version>${project.version}</version>
+	<packaging>pom</packaging>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<project.version>0.0.1-SNAPSHOT</project.version>
+        <java.version>15</java.version> 
+		<maven.compiler.source>15</maven.compiler.source>
+		<maven.compiler.target>15</maven.compiler.target>
+		<spring.version>5.3.3</spring.version>
+		<!-- Logging -->
+		<logback.version>1.2.2</logback.version>
+		<slf4j.version>1.7.30</slf4j.version>
+		<!--DB -->
+		<postgresql.version>42.2.18</postgresql.version>
+		<mysql.version>5.1.38</mysql.version>
+		<hibernate.core.version>5.4.1.Final</hibernate.core.version>
+		<servlet-api-version>3.1.0</servlet-api-version>
+		<!-- Tests -->
+		<junit.version>5.7.0</junit.version>
+		<assertj.version>3.12.0</assertj.version>
+		<cucumber.version>4.2.3</cucumber.version>
+		<spring-boot.version>2.2.0.M6</spring-boot.version>
+        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+
+		<assertj.version>3.12.0</assertj.version>
+		<cucumber.version>4.2.3</cucumber.version>
+		<spring-boot.version>2.2.0.M6</spring-boot.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+	</properties>
+	
+	
+	 <dependencies>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java8</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-picocontainer</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <argLine>
+                        -Djunit.jupiter.extensions.autodetection.enabled=false
+                        -Djunit.jupiter.displayname.generator.default=org.junit.jupiter.api.DisplayNameGenerator$ReplaceUnderscores
+                    </argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	
+	
+    <modules>
+    	<module>mydomain</module>
+    </modules>
 </project>

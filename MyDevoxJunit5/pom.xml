@@ -111,5 +111,6 @@
 	
     <modules>
     	<module>mydomain</module>
+    	<module>myinfrastructure</module>
     </modules>
 </project>

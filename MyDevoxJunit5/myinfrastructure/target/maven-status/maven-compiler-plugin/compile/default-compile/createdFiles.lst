@@ -1,0 +1,7 @@
+org\craftsrecords\rememberme\RememberMeApplication.class
+org\craftsrecords\rememberme\rest\BookmarkController.class
+org\craftsrecords\rememberme\config\BeanConfiguration.class
+org\craftsrecords\rememberme\rest\BookmarkPayload.class
+org\craftsrecords\rememberme\repository\JpaBookmarkRepository.class
+org\craftsrecords\rememberme\repository\BookmarkRepository.class
+org\craftsrecords\rememberme\repository\BookmarkEntity.class

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.craftsrecords.rememberme.junit4.repository.BookmarkRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.695 s - in org.craftsrecords.rememberme.junit4.repository.BookmarkRepositoryTest

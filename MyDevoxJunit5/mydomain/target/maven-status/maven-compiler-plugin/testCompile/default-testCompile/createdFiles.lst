@@ -1,0 +1,13 @@
+org\craftsrecords\rememberme\bookmark\junit5\BookmarkCreatorTest.class
+org\craftsrecords\rememberme\features\stepdefs\BookmarkStepDefs.class
+org\craftsrecords\rememberme\features\FunctionalTest.class
+org\craftsrecords\rememberme\features\TestConfig.class
+org\craftsrecords\rememberme\bookmark\junit4\BookmarksFinderTest.class
+org\craftsrecords\rememberme\stubs\InMemoryBookmarks.class
+org\craftsrecords\rememberme\bookmark\junit4\BookmarkCreatorTest.class
+org\craftsrecords\rememberme\features\stepdefs\TestContext.class
+org\craftsrecords\rememberme\bookmark\junit5\BookmarksFinderTest.class
+org\craftsrecords\rememberme\bookmark\junit5\EqualityTest.class
+org\craftsrecords\rememberme\bookmark\junit5\TagsTest.class
+org\craftsrecords\rememberme\bookmark\junit5\BookmarkTest.class
+org\craftsrecords\rememberme\bookmark\junit4\BookmarkTest.class

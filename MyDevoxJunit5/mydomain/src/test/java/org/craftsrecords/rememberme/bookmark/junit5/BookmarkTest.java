@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Set;
@@ -48,6 +49,7 @@ class BookmarkTest implements EqualityTest<Bookmark> {
     @ValueSource(strings = {" ", "  ", "\t"})
     @DisplayName("Should not accept null, empty or blank name")
     @ParameterizedTest(name = "\"{0}\"")
+    @NullSource
     void should_not_accept_a_invalid_name(String name) {
         Exception exception = assertThrows(
                 IllegalArgumentException.class,

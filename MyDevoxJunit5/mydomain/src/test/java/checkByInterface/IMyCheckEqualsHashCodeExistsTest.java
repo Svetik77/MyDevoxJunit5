@@ -16,10 +16,20 @@ public interface IMyCheckEqualsHashCodeExistsTest<T>  {
     @Test
     @DisplayName("if NO equals hashCode return false")
     default void chackEqualsHashCodeExists( ) {
-     	Assertions.assertEquals(createValue() , createValue());
-    	 assertThat(createValue()).isEqualTo(createValue());
+    	
+    	T cVal = createValue();
+     	T cVal2 = createValue();
+     	System.out.println(cVal.hashCode() );
+     	System.out.println(cVal2.hashCode() );
+     	
+		Assertions.assertEquals(cVal , cVal2);
+     	
+    	 assertThat(cVal).isEqualTo(createValue());
+    	 
     	    assertThat(createValue().hashCode()).isEqualTo(createValue().hashCode());
-    }
+    	    
+    	    
+    } 
     
     @Test
     @DisplayName("The values should not be equal")

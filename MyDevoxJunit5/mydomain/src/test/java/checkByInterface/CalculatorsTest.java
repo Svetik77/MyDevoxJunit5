@@ -9,5 +9,11 @@ class CalculatorsTest implements
 		return  new Calculators(5, 7);
 	}
 
+	@Override
+	public Calculators createOtherValue() {
+		 
+		return new Calculators(1, 7);
+	}
+
 
 }

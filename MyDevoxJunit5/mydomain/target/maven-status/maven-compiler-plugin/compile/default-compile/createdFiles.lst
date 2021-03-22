@@ -1,8 +1,0 @@
-org\craftsrecords\rememberme\bookmark\Bookmarks.class
-org\craftsrecords\rememberme\bookmark\Bookmark.class
-org\craftsrecords\rememberme\bookmark\BookmarksFinder.class
-org\craftsrecords\rememberme\bookmark\Tags.class
-org\craftsrecords\rememberme\api\FindBookmarks.class
-org\craftsrecords\rememberme\bookmark\AlreadyBookmarkedException.class
-org\craftsrecords\rememberme\api\CreateBookmark.class
-org\craftsrecords\rememberme\bookmark\BookmarkCreator.class

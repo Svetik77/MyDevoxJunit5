@@ -11,3 +11,5 @@ rm 'MyDevoxJunit5/myinfrastructure/target/classes/META-INF/maven/com.my/myinfras
  git commit -m 'del pom prop'
  git push
  
+ equalsиhashCode if needed
+ https://belief-driven-design.com/equality-and-comparison-in-java-a5e0f05b808/

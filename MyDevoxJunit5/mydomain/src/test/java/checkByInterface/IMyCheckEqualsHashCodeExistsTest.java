@@ -19,8 +19,8 @@ public interface IMyCheckEqualsHashCodeExistsTest<T>  {
     	
     	T cVal = createValue();
      	T cVal2 = createValue();
-     	System.out.println(cVal.hashCode() );
-     	System.out.println(cVal2.hashCode() );
+     	System.out.println("hashCode : " +  cVal.hashCode() );
+     	System.out.println("hashCode : " +  cVal2.hashCode() );
      	
 		Assertions.assertEquals(cVal , cVal2);
      	

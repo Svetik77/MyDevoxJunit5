@@ -1,4 +1,6 @@
-package checkByInterface;
+package checkByInterface.cars;
+
+import checkByInterface.IMyCheckEqualsHashCodeExistsTest;
 
 class CarTest implements 
 			IMyCheckEqualsHashCodeExistsTest<Car> {

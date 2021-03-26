@@ -1,4 +1,4 @@
-package checkByInterface;
+package checkByInterface.cars;
 
 public class Car {
 

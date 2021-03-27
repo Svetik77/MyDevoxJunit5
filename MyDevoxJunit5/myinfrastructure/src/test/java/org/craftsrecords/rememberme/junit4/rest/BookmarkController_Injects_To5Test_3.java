@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.craftsrecords.rememberme.repository.BookmarkRepository;
 import org.craftsrecords.rememberme.rest.BookmarkPayload;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -16,32 +15,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-// @RunWith(SpringRunner.class)
-// @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder( OrderAnnotation.class)
-public class BookmarkController_To5Test_1 {
-/**
- * DirtiesContext => save AFTER_EACH_TEST_METHOD 
- * performance issue проблема с производительностью
- * with @TestMethodOrder( OrderAnnotation.class)
- * you don't need !!!   <br>
- */
+public class BookmarkController_Injects_To5Test_3 {
   
+	/**new Parameter resolver to able 
+	 * directly Inject my own Objects without spring
+	 */
+	
+	
     @Autowired
     private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
-    private BookmarkRepository bookmarkRepository;
+ 
 
     private static final BookmarkPayload bookmarkPayload = new BookmarkPayload(
             "http://www.test.com",
@@ -51,7 +41,8 @@ public class BookmarkController_To5Test_1 {
 
     @Test
     @Order(1)
-    public void should_respond_201_when_the_bookmark_is_created() throws Exception {
+    public void should_respond_201_when_the_bookmark_is_created(@Autowired ObjectMapper objectMapper) 
+    		 throws Exception {
         mockMvc.perform(
                 post("/bookmarks")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -60,7 +51,8 @@ public class BookmarkController_To5Test_1 {
     }  
 
     @Test
-    public void should_respond_400_when_the_request_is_invalid() throws Exception {
+    public void should_respond_400_when_the_request_is_invalid(@Autowired ObjectMapper objectMapper) 
+    		throws Exception {
         BookmarkPayload bookmarkPayload = new BookmarkPayload(
                 "invalid://url.com",
                 "An invalid link",
@@ -74,14 +66,13 @@ public class BookmarkController_To5Test_1 {
                 .andExpect(status().isBadRequest());
     }
 
-    /**
+    /**second control not save twice bootstrapping самозагрузка
      * @TestMethodOrder( OrderAnnotation.class) <br>
      * @throws Exception
      */
-    @Test // second control not save twice bootstrapping самозагрузка
-    public void should_respond_409_when_the_bookmark_already_exists() throws Exception {
-/*@TestMethodOrder( OrderAnnotation.class)  don't need all the time save now*/
-    	//        bookmarkRepository.save(bookmarkPayload.toBookmark());
+    @Test  
+    public void should_respond_409_when_the_bookmark_already_exists(@Autowired ObjectMapper objectMapper) 
+    		throws Exception {
 
         mockMvc.perform(
                 post("/bookmarks")
@@ -92,8 +83,6 @@ public class BookmarkController_To5Test_1 {
 
     @Test
     public void should_respond_200_when_a_search_is_successfully_done() throws Exception {
-    	/*@TestMethodOrder( OrderAnnotation.class)  don't need all the time save now*/
-    	//        bookmarkRepository.save(bookmarkPayload.toBookmark());
 
         mockMvc.perform(
                 get("/bookmarks")

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder( OrderAnnotation.class)
-public class BookmarkController_Isolated_To5Test {
+public class BookmarkController_Isolated_To5Test_2 {
 /**
  * DirtiesContext => save AFTER_EACH_TEST_METHOD 
  * performance issue проблема с производительностью

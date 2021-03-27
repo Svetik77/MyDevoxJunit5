@@ -22,18 +22,18 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 // @RunWith(SpringRunner.class)
- @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+// @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @SpringBootTest
 @AutoConfigureMockMvc
-//@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestMethodOrder( OrderAnnotation.class)
 public class BookmarkController_To5Test {
 /**
  * DirtiesContext => save AFTER_EACH_TEST_METHOD 
  * performance issue проблема с производительностью
- * 
+ * with @TestMethodOrder( OrderAnnotation.class)
+ * you don't need !!!   <br>
  */
-	 
+  
     @Autowired
     private MockMvc mockMvc;
 
@@ -57,7 +57,7 @@ public class BookmarkController_To5Test {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(bookmarkPayload)))
                 .andExpect(status().isCreated());
-    }
+    }  
 
     @Test
     public void should_respond_400_when_the_request_is_invalid() throws Exception {
@@ -74,9 +74,14 @@ public class BookmarkController_To5Test {
                 .andExpect(status().isBadRequest());
     }
 
+    /**
+     * @TestMethodOrder( OrderAnnotation.class) <br>
+     * @throws Exception
+     */
     @Test // second control not save twice bootstrapping самозагрузка
     public void should_respond_409_when_the_bookmark_already_exists() throws Exception {
-        bookmarkRepository.save(bookmarkPayload.toBookmark());
+/*@TestMethodOrder( OrderAnnotation.class)  don't need all the time save now*/
+    	//        bookmarkRepository.save(bookmarkPayload.toBookmark());
 
         mockMvc.perform(
                 post("/bookmarks")
@@ -87,7 +92,8 @@ public class BookmarkController_To5Test {
 
     @Test
     public void should_respond_200_when_a_search_is_successfully_done() throws Exception {
-        bookmarkRepository.save(bookmarkPayload.toBookmark());
+    	/*@TestMethodOrder( OrderAnnotation.class)  don't need all the time save now*/
+    	//        bookmarkRepository.save(bookmarkPayload.toBookmark());
 
         mockMvc.perform(
                 get("/bookmarks")

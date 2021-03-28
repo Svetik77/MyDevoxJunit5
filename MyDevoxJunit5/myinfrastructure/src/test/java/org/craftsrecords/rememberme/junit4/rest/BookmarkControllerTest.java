@@ -1,7 +1,11 @@
 package org.craftsrecords.rememberme.junit4.rest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.craftsrecords.rememberme.bookmark.Bookmark;
+import static java.util.Collections.emptyList;
+import static java.util.Collections.singletonList;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.craftsrecords.rememberme.repository.BookmarkRepository;
 import org.craftsrecords.rememberme.rest.BookmarkPayload;
 import org.junit.Test;
@@ -14,13 +18,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static java.util.Collections.emptyList;
-import static java.util.Collections.singletonList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureMockMvc

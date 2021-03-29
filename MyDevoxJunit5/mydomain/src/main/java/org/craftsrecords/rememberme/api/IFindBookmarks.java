@@ -5,6 +5,6 @@ import org.craftsrecords.rememberme.bookmark.Bookmark;
 import java.util.Collection;
 
 @FunctionalInterface
-public interface FindBookmarks {
+public interface IFindBookmarks {
     Collection<Bookmark> by(String tags);
 }

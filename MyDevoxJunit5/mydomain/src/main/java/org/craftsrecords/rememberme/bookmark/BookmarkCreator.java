@@ -1,10 +1,10 @@
 package org.craftsrecords.rememberme.bookmark;
 
-import org.craftsrecords.rememberme.api.CreateBookmark;
+import org.craftsrecords.rememberme.api.ICreateBookmark;
 
 import java.util.Collection;
 
-public class BookmarkCreator implements CreateBookmark {
+public class BookmarkCreator implements ICreateBookmark {
 
     private Bookmarks bookmarks;
 

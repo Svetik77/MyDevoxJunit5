@@ -1,6 +1,6 @@
 package org.craftsrecords.rememberme.bookmark.junit5;
 
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
 import org.craftsrecords.rememberme.bookmark.BookmarksFinder;
@@ -21,7 +21,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class BookmarksFinderTest {
 
     private static Bookmarks bookmarks;
-    private static FindBookmarks findBookmarks;
+    private static IFindBookmarks findBookmarks;
 
     @BeforeAll
     static void setUp() {

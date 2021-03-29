@@ -1,11 +1,11 @@
 package org.craftsrecords.rememberme.bookmark;
 
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-public class BookmarksFinder implements FindBookmarks {
+public class BookmarksFinder implements IFindBookmarks {
 
     private Bookmarks bookmarks;
 

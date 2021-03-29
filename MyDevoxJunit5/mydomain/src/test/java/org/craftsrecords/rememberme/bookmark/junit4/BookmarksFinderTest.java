@@ -1,6 +1,6 @@
 package org.craftsrecords.rememberme.bookmark.junit4;
 
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
 import org.craftsrecords.rememberme.bookmark.BookmarksFinder;
@@ -30,7 +30,7 @@ public class BookmarksFinderTest {
 
     @Test
     public void should_find_bookmarks_by_tag() {
-        FindBookmarks findBookmarks = new BookmarksFinder(bookmarks);
+        IFindBookmarks findBookmarks = new BookmarksFinder(bookmarks);
         Collection<Bookmark> bookmarks = findBookmarks.by(tag);
 
         assertThat(bookmarks).containsExactlyInAnyOrder(expected);

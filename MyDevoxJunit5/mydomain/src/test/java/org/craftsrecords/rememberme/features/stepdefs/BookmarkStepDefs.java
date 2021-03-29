@@ -1,8 +1,8 @@
 package org.craftsrecords.rememberme.features.stepdefs;
 
 import cucumber.api.java8.En;
-import org.craftsrecords.rememberme.api.CreateBookmark;
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.ICreateBookmark;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 import org.craftsrecords.rememberme.bookmark.AlreadyBookmarkedException;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
@@ -18,8 +18,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BookmarkStepDefs implements En {
 
     public BookmarkStepDefs(TestContext context,
-                            CreateBookmark createBookmark,
-                            FindBookmarks findBookmarks,
+                            ICreateBookmark createBookmark,
+                            IFindBookmarks findBookmarks,
                             Bookmarks bookmarks) {
 
         Given("^a link towards a useful resource$",

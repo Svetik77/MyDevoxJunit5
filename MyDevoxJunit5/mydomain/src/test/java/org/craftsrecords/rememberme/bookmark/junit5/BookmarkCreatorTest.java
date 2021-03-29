@@ -1,6 +1,6 @@
 package org.craftsrecords.rememberme.bookmark.junit5;
 
-import org.craftsrecords.rememberme.api.CreateBookmark;
+import org.craftsrecords.rememberme.api.ICreateBookmark;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.craftsrecords.rememberme.bookmark.BookmarkCreator;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
@@ -19,7 +19,7 @@ class BookmarkCreatorTest {
     private static String name;
     private static Set<String> tags;
 
-    private CreateBookmark createBookmark;
+    private ICreateBookmark createBookmark;
     private Bookmarks bookmarks;
 
     @BeforeAll

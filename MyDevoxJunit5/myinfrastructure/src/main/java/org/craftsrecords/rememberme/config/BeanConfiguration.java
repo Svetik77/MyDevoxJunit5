@@ -1,7 +1,7 @@
 package org.craftsrecords.rememberme.config;
 
-import org.craftsrecords.rememberme.api.CreateBookmark;
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.ICreateBookmark;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 import org.craftsrecords.rememberme.bookmark.BookmarkCreator;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
 import org.craftsrecords.rememberme.bookmark.BookmarksFinder;
@@ -19,12 +19,12 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public CreateBookmark createBookmark(Bookmarks bookmarks) {
+    public ICreateBookmark createBookmark(Bookmarks bookmarks) {
         return new BookmarkCreator(bookmarks);
     }
 
     @Bean
-    public FindBookmarks findBookmarks(Bookmarks bookmarks) {
+    public IFindBookmarks findBookmarks(Bookmarks bookmarks) {
         return new BookmarksFinder(bookmarks);
     }
 

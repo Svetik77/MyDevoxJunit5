@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Optional;
 import java.util.Set;
 
-import org.craftsrecords.rememberme.api.CreateBookmark;
+import org.craftsrecords.rememberme.api.ICreateBookmark;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.craftsrecords.rememberme.bookmark.BookmarkCreator;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
@@ -24,7 +24,7 @@ public class BookmarkCreatorTest {
     private static String name;
     private static Set<String> tags;
 
-    private CreateBookmark createBookmark;
+    private ICreateBookmark createBookmark;
     private Bookmarks bookmarks;
 
     @BeforeAll

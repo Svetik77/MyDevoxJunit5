@@ -1,7 +1,7 @@
 package org.craftsrecords.rememberme.rest;
 
-import org.craftsrecords.rememberme.api.CreateBookmark;
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.ICreateBookmark;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 import org.craftsrecords.rememberme.bookmark.AlreadyBookmarkedException;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.springframework.http.HttpStatus;
@@ -16,17 +16,17 @@ import java.util.Collection;
 @RequestMapping("/bookmarks")
 public class BookmarkController {
 
-    private CreateBookmark createBookmark;
-    private FindBookmarks findBookmarks;
+    private ICreateBookmark icreateBookmark;
+    private IFindBookmarks findBookmarks;
 
-    public BookmarkController(CreateBookmark createBookmark, FindBookmarks findBookmarks) {
-        this.createBookmark = createBookmark;
+    public BookmarkController(ICreateBookmark createBookmark, IFindBookmarks findBookmarks) {
+        this.icreateBookmark = createBookmark;
         this.findBookmarks = findBookmarks;
     }
 
     @PostMapping
     public ResponseEntity createBookmark(@RequestBody BookmarkPayload bookmarkPayload) {
-        createBookmark.forResource(bookmarkPayload.url, bookmarkPayload.name, bookmarkPayload.tags);
+        icreateBookmark.forResource(bookmarkPayload.url, bookmarkPayload.name, bookmarkPayload.tags);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

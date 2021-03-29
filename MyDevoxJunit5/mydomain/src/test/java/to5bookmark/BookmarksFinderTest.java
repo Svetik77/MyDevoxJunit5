@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Collection;
 import java.util.stream.Stream;
 
-import org.craftsrecords.rememberme.api.FindBookmarks;
+import org.craftsrecords.rememberme.api.IFindBookmarks;
 import org.craftsrecords.rememberme.bookmark.Bookmark;
 import org.craftsrecords.rememberme.bookmark.Bookmarks;
 import org.craftsrecords.rememberme.bookmark.BookmarksFinder;
@@ -22,7 +22,7 @@ public class BookmarksFinderTest {
     @ParameterizedTest
     @MethodSource("testCases2")
     public void should_find_bookmarks_by_tag(String tag, Bookmark[] expected) {
-        FindBookmarks findBookmarks = new BookmarksFinder(bookmarks);
+        IFindBookmarks findBookmarks = new BookmarksFinder(bookmarks);
         Collection<Bookmark> bookmarks = findBookmarks.by(tag);
 
         assertThat(bookmarks).containsExactlyInAnyOrder(expected);

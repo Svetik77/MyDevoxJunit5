@@ -1,1 +1,2 @@
 org.craftsrecords.rememberme.junit5.resolvers.BookmarkResolver
+org.craftsrecords.rememberme.junit4.rest.MyResolver

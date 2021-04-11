@@ -102,11 +102,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                <!-- add file of global Extensions in resources file and here enabled=true -->
                     <argLine>
+                <!-- pic : junitextends_globaly.png -->
                         -Djunit.jupiter.extensions.autodetection.enabled=false
-                        -Djunit.jupiter.displayname.generator.default=org.junit.jupiter.api.DisplayNameGenerator$ReplaceUnderscores
+                        -Djunit.jupiter.displayname.generator.default=org.junit.jupiter
+                               .api.DisplayNameGenerator$ReplaceUnderscores
                     </argLine>
                 </configuration>
             </plugin>

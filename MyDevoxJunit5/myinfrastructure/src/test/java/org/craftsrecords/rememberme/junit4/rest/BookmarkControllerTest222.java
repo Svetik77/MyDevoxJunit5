@@ -19,12 +19,15 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/** org.craftsrecords.rememberme.junit4.rest.MyResolver => in resources file*/
+/**pic with explains =>  junitextends_globaly.png*/
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder( OrderAnnotation.class)
 @ExtendWith(MyResolver.class)
 public class BookmarkControllerTest222 {
-
+// pic : junitextends_globaly.png
     @Autowired
     private MockMvc mockMvc;
 
